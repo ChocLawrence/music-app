@@ -8,10 +8,11 @@ import {
 export default function fetchChart() {
     return (dispatch) => {
         dispatch(actionTopArtistsPending());
-        fetch("/api/chart")
+        fetch(`${process.env.REACT_APP_API_PROXY}/chart`)
             // fetch("/chart")
             .then((res) => res.json())
             .then((res) => {
+                
                 if (res.error) {
                     throw res.error;
                 }

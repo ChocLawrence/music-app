@@ -8,7 +8,7 @@ import {
 export default function fetchSingleArtist(id) {
     return (dispatch) => {
         dispatch(actionSingleArtistPending());
-        fetch(`/api/artist/${id}`)
+        fetch(`${process.env.REACT_APP_API_PROXY}/artist/${id}`)
             // fetch(`/artist/${id}`)
             .then((res) => res.json())
             .then((res) => {

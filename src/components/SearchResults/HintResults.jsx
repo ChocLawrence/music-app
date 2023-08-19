@@ -1,15 +1,13 @@
 import React from "react";
 import "./HintResults.css";
-
 import { Link } from "react-router-dom";
-
 import ItemResult from "./ItemResult";
 
 const HintResults = ({ artistsFound, albumsFound, songsFound }) => {
   return (
     <div id="hint-container">
       <div>
-        <section>
+        {/* <section>
           <h3 className="title-section">Artists</h3>
           {artistsFound.data.length > 0 ? (
             artistsFound.data.map((artist) => (
@@ -40,15 +38,18 @@ const HintResults = ({ artistsFound, albumsFound, songsFound }) => {
           ) : (
             <div className="error">No Matches Were Found</div>
           )}
-        </section>
+        </section> */}
         <section>
           <h3 className="title-section">Songs</h3>
           {songsFound.data.length > 0 ? (
             songsFound.data.map((track) => (
-              <Link to={`/album/${track.album.id}`}>
+              <Link to={`/artist/${track.artist.id}`}  key={track.id}>
                 <ItemResult
                   key={track.id}
                   text={track.title_short}
+                  artist={track.artist.name}
+                  album={track.album.title}
+                  duration={track.duration}
                   pic={track.album.cover_small}
                 />
               </Link>

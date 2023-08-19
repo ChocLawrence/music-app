@@ -334,30 +334,57 @@ th {
     }
 }
 
-
-/* Start Single Artist Page */
-
-.header-artist {
-    display: flex;
+.container-popular {
+    position: relative;
+    color: white;
+    text-decoration: none;
 }
 
-.header-artist img {
-    border-radius: 50%;
+.container-popular .container-images {
+    width: 90%;
+    height: 375px;
+    margin-top: 45px;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
 }
 
-.header-artist .artist-info {
-    align-self: center;
-    margin-left: 20px;
+.container-images:hover {
+    box-shadow: inset 0 0 0 200px rgba(0, 0, 0, 0.3);
+    filter: blur(10px);
 }
 
-.header-artist .artist-info h1 {
-    margin: 0;
+.container-popular .fans{
+    font-size: 20px;
 }
 
-@media (max-width: 500px) {
-    .header-artist img {
-        width: 150px;
-        max-height: 150px;
+.container-popular .title {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    color: var(--red);
+    font-size: 2rem;
+}
+
+@media (max-width: 550px) {
+    
+    .container-popular .title {
+        left: 50%;
+    }
+
+}
+
+.container-popular .title span {
+    color: white;
+    font-size: 3rem;
+}
+
+@media (max-width: 700px) {
+    .container-popular .container-images {
+        width: 100%;
     }
 }
 
@@ -381,6 +408,5 @@ th {
     font-weight: 700;
     color: var(--yellow);
 }
-
 
 /* End Error Page - 404 Not Found */

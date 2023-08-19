@@ -8,7 +8,7 @@ import {
 export default function fetchSearchAlbums(query) {
     return (dispatch) => {
         dispatch(actionSearchAlbumsPending());
-        fetch(`/api/search/album?q=${query}&limit=3`)
+        fetch(`${process.env.REACT_APP_API_PROXY}/search/album?q=${query}&limit=3`)
             // fetch(`/search/album?q=${query}&limit=3`)
             .then((res) => res.json())
             .then((res) => {

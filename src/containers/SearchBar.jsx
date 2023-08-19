@@ -55,8 +55,6 @@ class SearchBar extends Component {
       }
     });
     const {
-      foundArtists,
-      foundAlbums,
       foundTracks,
       loadingArtists,
       loadingAlbums,
@@ -69,7 +67,7 @@ class SearchBar extends Component {
             <FontAwesomeIcon className="icon-search" icon={faSearch} />
             <input
               type="text"
-              placeholder="Search Artist, Albums, Songs"
+              placeholder="Search Songs"
               onChange={this.handleChange}
             />
           </form>
@@ -85,11 +83,7 @@ class SearchBar extends Component {
             placeholder="Search Artist, Albums, Songs"
             onChange={this.handleChange}
           />
-          <HintResults
-            artistsFound={foundArtists}
-            albumsFound={foundAlbums}
-            songsFound={foundTracks}
-          />
+          <HintResults songsFound={foundTracks} />
         </form>
         <ToogleTheme />
       </div>

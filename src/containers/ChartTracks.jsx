@@ -15,7 +15,6 @@ class ChartTracks extends Component {
 
   render() {
     const { tracks, loading, error } = this.props;
-    console.log("Track: ", tracks);
 
     if (loading) return <Loading />;
     else {

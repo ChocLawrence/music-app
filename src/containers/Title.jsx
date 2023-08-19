@@ -6,7 +6,6 @@ import fetchArtistAction from "../api/fecthSingleArtist";
 import convertNumber from "../core/functions/convertNumber";
 
 import Loading from "../components/Loading/Loading";
-import FollowButton from "../components/Buttons/FollowButton";
 
 class Title extends Component {
   componentDidMount() {
@@ -27,14 +26,24 @@ class Title extends Component {
 
     if (loading) return <Loading />;
     return (
-      <div className="header-artist">
-        <img src={artist.picture_medium} alt={artist.name} />
-        <div className="artist-info">
-          <h1>{artist.name}</h1>
-          <p>{convertNumber(artist.nb_fan)} Fans</p>
-          <FollowButton artist={artist} />
-        </div>
+      // <div className="header-artist">
+      //   <img src={artist.picture_medium} alt={artist.name} />
+      //   <div className="artist-info">
+      //     <h1>{artist.name}</h1>
+      //     <p>{convertNumber(artist.nb_fan)} Fans</p>
+      //   </div>
+      // </div>
+      <div className="container-popular">
+          <div>
+            <img src={artist.picture_medium} alt={artist.name} className="container-images"/>
+          </div>
+          <h2 className="title">
+           {artist.name}  <p className="fans">{convertNumber(artist.nb_fan)} Fans</p>
+          </h2>
+         
       </div>
+
+      
     );
   }
 }
